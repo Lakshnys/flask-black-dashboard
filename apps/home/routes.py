@@ -27,8 +27,12 @@ test2 = ' 1237' # Variable trasnsfer to .html and js
 
 @blueprint.route('/index')
 @login_required
-def index():
-    return render_template('home/index.html', segment='index', test2=test2, dataTest1=json.dumps(dataTest1), dataLable1=json.dumps(dataLable1)) # test2 variable tranfer to index.html
+def index(): 
+    return render_template('home/index.html', segment='index', test2=test2, 
+                                              dataTest1=json.dumps(dataTest1), 
+                                              dataLable1=json.dumps(dataLable1)) # test2 variable tranfer to index.html
+
+                                              
 
 @blueprint.route('/<template>')
 @login_required

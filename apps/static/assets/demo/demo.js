@@ -425,7 +425,7 @@ demo = {
     // var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     var chart_labels = testLable1;
     // var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
-    var chart_data = [120, 120, 120, 120, 120, 120, 120, 60, 90, 80, 110, 100];
+    var chart_data = [170, 90, 60, 60, 60, 120, 120, 60, 90, 80, 110, 100];
 
     var ctx = document.getElementById("chartBig1").getContext('2d');
 
@@ -440,8 +440,8 @@ demo = {
         labels: chart_labels,
         datasets: [{
           label: "My First dataset",
-          fill: true,
-          // fill: false,
+          // fill: true,
+          fill: false,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',
           borderWidth: 2,
@@ -477,7 +477,7 @@ demo = {
     });
     
       // var testData = [90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 120];
-      var testData111 = testData11;
+    var testData111 = testData11;
     $("#2").click(function() {
       // var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
       console.log(testData111);
