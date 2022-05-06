@@ -7,16 +7,13 @@ from apps.home import blueprint
 from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
-import json
 
-test2 = ' 1237' # Variable trasnsfer to .html and js 
-dataTest1 = [60, 70, 80, 90, 100, 100,  100, 100, 110,110, 120, 120]
 
 @blueprint.route('/index')
 @login_required
 def index():
 
-    return render_template('home/index.html', segment='index', test2=test2, dataTest1=json.dumps(dataTest1)) # test2 variable tranfer to index.html
+    return render_template('home/index.html', segment='index')
 
 @blueprint.route('/<template>')
 @login_required
