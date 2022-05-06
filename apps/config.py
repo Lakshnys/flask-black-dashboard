@@ -24,8 +24,8 @@ class ProductionConfig(Config):
     # Security
     SESSION_COOKIE_HTTPONLY = True
     REMEMBER_COOKIE_HTTPONLY = True
-    REMEMBER_COOKIE_DURATION = 3600
-
+    # REMEMBER_COOKIE_DURATION = 3600 // old settings
+    REMEMBER_COOKIE_DURATION = 20 # new setting for testing the cookie duration
     # PostgreSQL database
     SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(
         config('DB_ENGINE', default='postgresql'),

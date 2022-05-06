@@ -85,29 +85,28 @@ demo = {
     myChart = new Chart(ctx, {
       type: 'line',
       responsive: true,
-      data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Active Users",
-          borderColor: "#f96332",
-          pointBorderColor: "#FFF",
-          pointBackgroundColor: "#f96332",
-          pointBorderWidth: 2,
-          pointHoverRadius: 4,
-          pointHoverBorderWidth: 1,
-          pointRadius: 4,
-          fill: true,
-          backgroundColor: gradientFill,
-          borderWidth: 2,
-          data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
-        }]
-      },
-      options: gradientChartOptionsConfiguration
+  //     data: {
+  //       labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  //       datasets: [{
+  //         label: "Active Users",
+  //         borderColor: "#f96332",
+  //         pointBorderColor: "#FFF",
+  //         pointBackgroundColor: "#f96332",
+  //         pointBorderWidth: 2,
+  //         pointHoverRadius: 4,
+  //         pointHoverBorderWidth: 1,
+  //         pointRadius: 4,
+  //         fill: true,
+  //         backgroundColor: gradientFill,
+  //         borderWidth: 2,
+  //         data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
+  //       }]
+  //     },
+  //     options: gradientChartOptionsConfiguration
     });
   },
 
   initDashboardPageCharts: function() {
-
     gradientChartOptionsConfigurationWithTooltipBlue = {
       maintainAspectRatio: false,
       legend: {
@@ -127,7 +126,7 @@ demo = {
       responsive: true,
       scales: {
         yAxes: [{
-          barPercentage: 1.6,
+          barPercentage: 1.6, // coma missed so graph not dispayed, let check after putting coma //
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.0)',
@@ -181,7 +180,7 @@ demo = {
             color: 'rgba(29,140,248,0.0)',
             zeroLineColor: "transparent",
           },
-          ticks: {
+          ticks: { // y axis range -- 60 to 123 ie., 130 with interval 20
             suggestedMin: 60,
             suggestedMax: 125,
             padding: 20,
@@ -194,6 +193,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(225,78,202,0.1)',
+            // color: 'rgba(255,255,255)',
             zeroLineColor: "transparent",
           },
           ticks: {
@@ -374,7 +374,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80],
+        data: [80, 100, 70, 80, 120, 80], //purple colors
       }]
     };
 
@@ -394,7 +394,7 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
       datasets: [{
         label: "My First dataset",
         fill: true,
@@ -410,7 +410,8 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
+        data: [90, 27, 60, 12, 56, 109], //green colors
+        // data: dataTest1,
       }]
     };
 
@@ -421,11 +422,9 @@ demo = {
 
     });
 
-
-
     var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
-
+    // var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
+    var chart_data = [120, 120, 120, 120, 120, 120, 120, 60, 90, 80, 110, 100];
 
     var ctx = document.getElementById("chartBig1").getContext('2d');
 
@@ -441,6 +440,7 @@ demo = {
         datasets: [{
           label: "My First dataset",
           fill: true,
+          // fill: false,
           backgroundColor: gradientStroke,
           borderColor: '#d346b1',
           borderWidth: 2,
@@ -458,7 +458,8 @@ demo = {
       },
       options: gradientChartOptionsConfigurationWithTooltipPurple
     };
-    var myChartData = new Chart(ctx, config);
+
+    var myChartData = new Chart(ctx, config); // Purchases chart values
     $("#0").click(function() {
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
@@ -466,15 +467,20 @@ demo = {
       myChartData.update();
     });
     $("#1").click(function() {
-      var chart_data = [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120];
+      // var chart_data = [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120];
+      var chart_data = [100, 120, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
       myChartData.update();
     });
-
+    
+      // var testData = [90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 120];
+      var testData111 = testData11;
     $("#2").click(function() {
-      var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
+      // var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
+      console.log(testData111);
+      var chart_data = testData111;
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
@@ -508,7 +514,7 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
+          data: [53, 20, 10, 80, 100, 45], //blue colors
         }]
       },
       options: gradientBarChartConfiguration
@@ -738,5 +744,7 @@ demo = {
       }
     });
   }
+
+  // document.getElementById("test1").innerHTML = 1234567
 
 };

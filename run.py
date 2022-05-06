@@ -6,6 +6,7 @@ Copyright (c) 2019 - present AppSeed.us
 from flask_migrate import Migrate
 from sys import exit
 from decouple import config
+from sqlalchemy import true
 
 from apps.config import config_dict
 from apps import create_app, db
@@ -27,10 +28,11 @@ except KeyError:
 app = create_app(app_config)
 Migrate(app, db)
 
+
 if DEBUG:
     app.logger.info('DEBUG       = ' + str(DEBUG))
     app.logger.info('Environment = ' + get_config_mode)
     app.logger.info('DBMS        = ' + app_config.SQLALCHEMY_DATABASE_URI)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, use_reloader=False)
