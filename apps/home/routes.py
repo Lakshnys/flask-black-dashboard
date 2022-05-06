@@ -3,20 +3,32 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+import csv
 from apps.home import blueprint
 from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 import json
+# Reading data from .csv file and stroting in the variable ##
+import os
+import glob
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv(r"D:\GIT_Hub_Lakshnys\Flask_Black_Dashboard\flask_black_dashboard_work\test.csv", header=None)
+
+dataLable1 = df[0].tolist() # Y-axis values from .csv file
+dataTest1 = df[1].tolist() # X-Axis values from .csv file
+
+### dataLable1 & dataTest1 hold the values from .csv file
 
 test2 = ' 1237' # Variable trasnsfer to .html and js 
-dataTest1 = [60, 70, 80, 90, 100, 100,  100, 100, 110,110, 120, 120]
+# dataTest1 = [60, 70, 80, 90, 100, 100,  100, 100, 110,110, 120, 120]
 
 @blueprint.route('/index')
 @login_required
 def index():
-
-    return render_template('home/index.html', segment='index', test2=test2, dataTest1=json.dumps(dataTest1)) # test2 variable tranfer to index.html
+    return render_template('home/index.html', segment='index', test2=test2, dataTest1=json.dumps(dataTest1), dataLable1=json.dumps(dataLable1)) # test2 variable tranfer to index.html
 
 @blueprint.route('/<template>')
 @login_required
