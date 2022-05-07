@@ -15,10 +15,12 @@ import glob
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv(r"D:\GIT_Hub_Lakshnys\Flask_Black_Dashboard\flask_black_dashboard_work\test.csv", header=None)
+df = pd.read_csv(r"D:\GIT_Hub_Lakshnys\Flask_Black_Dashboard\flask_black_dashboard_work\test.csv")
 
-dataLable1 = df[0].tolist() # Y-axis values from .csv file
-dataTest1 = df[1].tolist() # X-Axis values from .csv file
+dataLable1 = df['Month'].tolist() # Y-axis values from .csv file
+dataTest1 = df["Energy_Generation"].tolist() # X-Axis values from .csv file
+dataTest2 = df["Energy_Exported"].tolist() # X-Axis values from .csv file
+dataTest3 = df["Energy_Consumed"].tolist() # X-Axis values from .csv file
 
 ### dataLable1 & dataTest1 hold the values from .csv file
 
@@ -29,8 +31,10 @@ test2 = ' 1237' # Variable trasnsfer to .html and js
 @login_required
 def index(): 
     return render_template('home/index.html', segment='index', test2=test2, 
-                                              dataTest1=json.dumps(dataTest1), 
-                                              dataLable1=json.dumps(dataLable1)) # test2 variable tranfer to index.html
+                                              dataLable1=json.dumps(dataLable1),
+                                              dataTest1=json.dumps(dataTest1),
+                                              dataTest2=json.dumps(dataTest2),
+                                              dataTest3=json.dumps(dataTest3))# test2 variable tranfer to index.html
 
                                               
 

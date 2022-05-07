@@ -130,7 +130,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.0)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             suggestedMin: 60,
@@ -145,7 +145,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             padding: 20,
@@ -178,7 +178,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.0)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: { // y axis range -- 60 to 123 ie., 130 with interval 20
             suggestedMin: 60,
@@ -194,7 +194,7 @@ demo = {
             drawBorder: false,
             color: 'rgba(225,78,202,0.1)',
             // color: 'rgba(255,255,255)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             padding: 20,
@@ -227,7 +227,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.0)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             suggestedMin: 50,
@@ -242,7 +242,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(220,53,69,0.1)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             padding: 20,
@@ -275,7 +275,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.0)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             suggestedMin: 50,
@@ -290,7 +290,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(0,242,195,0.1)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             padding: 20,
@@ -324,7 +324,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             suggestedMin: 60,
@@ -339,7 +339,7 @@ demo = {
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
+            zeroLineColor: "transparent"
           },
           ticks: {
             padding: 20,
@@ -374,7 +374,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80], //purple colors
+        data: [80, 100, 70, 80, 120, 80] //purple colors
       }]
     };
 
@@ -410,7 +410,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [90, 27, 60, 12, 56, 109], //green colors
+        data: [90, 27, 60, 12, 56, 109] //green colors
         // data: dataTest1,
       }]
     };
@@ -422,10 +422,11 @@ demo = {
 
     });
 
+    var testData111 = testData11;
     // var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     var chart_labels = testLable1;
     // var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
-    var chart_data = [170, 90, 60, 60, 60, 120, 120, 60, 90, 80, 110, 100];
+    var chart_data = testData111;
 
     var ctx = document.getElementById("chartBig1").getContext('2d');
 
@@ -454,7 +455,7 @@ demo = {
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,
           pointRadius: 4,
-          data: chart_data,
+          data: chart_data
         }]
       },
       options: gradientChartOptionsConfigurationWithTooltipPurple
@@ -467,9 +468,11 @@ demo = {
       data.labels = chart_labels;
       myChartData.update();
     });
+
+    var testData222 = testData22;
     $("#1").click(function() {
       // var chart_data = [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120];
-      var chart_data = [100, 120, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
+      var chart_data = testData222;
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
@@ -477,11 +480,11 @@ demo = {
     });
     
       // var testData = [90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 120];
-    var testData111 = testData11;
+    var testData333 = testData33;
     $("#2").click(function() {
       // var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
-      console.log(testData111);
-      var chart_data = testData111;
+      console.log(testData333);
+      var chart_data = testData333;
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
@@ -515,7 +518,7 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45], //blue colors
+          data: [53, 20, 10, 80, 100, 45] //blue colors
         }]
       },
       options: gradientBarChartConfiguration
